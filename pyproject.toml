@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tutor_bot"
+version = "0.1.0"
+description = "telegram_bot"
+authors = ["Gnitetskiy, Zurilo, Scherbak, Korovin"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-telegram-bot = "21.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
