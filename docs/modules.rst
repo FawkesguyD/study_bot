@@ -1,0 +1,10 @@
+Modules
+=======
+
+.. automodule:: tutor_bot
+    :members:
+    :undoc-members:
+    :private-members:
+    :special-members:
+    :show-inheritance:
+
