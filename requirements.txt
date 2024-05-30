@@ -1,1 +1,4 @@
 python-telegram-bot==21.2
+sphinx==7.3.7
+sphinx-autodoc-typehints
+

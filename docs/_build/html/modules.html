@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modules &#8212; tutor_bot none documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=a9233558"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to tutor_bot’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h1>
+<section id="module-tutor_bot">
+<span id="tutor-bot"></span><h2>tutor_bot<a class="headerlink" href="#module-tutor_bot" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.add_schedule">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">add_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.add_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Initiates the process of adding a schedule. Prompts the user to select a day of the week.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.add_student">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">add_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.add_student" title="Link to this definition">¶</a></dt>
+<dd><p>Handles the action to add a student. Prompts the user to enter the student’s data in a specific format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.create_subject_keyboard">
+<span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">create_subject_keyboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.create_subject_keyboard" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an inline keyboard with buttons for selecting subjects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The inline keyboard markup with subject buttons.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>InlineKeyboardMarkup</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.create_tables">
+<span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.create_tables" title="Link to this definition">¶</a></dt>
+<dd><p>Creates the tables ‘students’ and ‘schedule’ in the ‘tutor_bot.db’ database.
+If the tables already exist, they will not be created again.</p>
+<dl class="simple">
+<dt>The ‘students’ table has the following columns:</dt><dd><ul class="simple">
+<li><p>id: INTEGER, Primary Key, Auto Increment</p></li>
+<li><p>name: TEXT, Not Null</p></li>
+<li><p>grade: TEXT, Not Null</p></li>
+</ul>
+</dd>
+<dt>The ‘schedule’ table has the following columns:</dt><dd><ul class="simple">
+<li><p>id: INTEGER, Primary Key, Auto Increment</p></li>
+<li><p>student_id: INTEGER, Not Null, Foreign Key referencing ‘students.id’</p></li>
+<li><p>weekday: INTEGER, Not Null</p></li>
+<li><p>time: TEXT, Not Null</p></li>
+<li><p>subject: TEXT, Not Null</p></li>
+</ul>
+</dd>
+</dl>
+<p>This function commits the changes to the database and then closes the connection.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.create_time_keyboard">
+<span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">create_time_keyboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.create_time_keyboard" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an inline keyboard with buttons for selecting time slots from 08:00 to 20:30.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The inline keyboard markup with time slot buttons.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>InlineKeyboardMarkup</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.create_weekday_keyboard">
+<span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">create_weekday_keyboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.create_weekday_keyboard" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an inline keyboard with buttons for each day of the week.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The inline keyboard markup with weekday buttons.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>InlineKeyboardMarkup</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.handle_message">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">handle_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.handle_message" title="Link to this definition">¶</a></dt>
+<dd><p>Handles text messages for adding students and schedules based on the current action stored in user_data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.main">
+<span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.main" title="Link to this definition">¶</a></dt>
+<dd><p>Main function to set up the bot, including creating the database tables and registering command handlers.
+Runs the bot’s polling loop to continuously check for new updates.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.select_subject">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">select_subject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.select_subject" title="Link to this definition">¶</a></dt>
+<dd><p>Handles the selection of a subject. Prompts the user to enter the student’s name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.select_time">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">select_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.select_time" title="Link to this definition">¶</a></dt>
+<dd><p>Handles the selection of a time slot. Prompts the user to select a subject.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.select_weekday">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">select_weekday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.select_weekday" title="Link to this definition">¶</a></dt>
+<dd><p>Handles the selection of a weekday. Prompts the user to select a time slot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.show_materials">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">show_materials</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.show_materials" title="Link to this definition">¶</a></dt>
+<dd><p>Displays additional materials for the students, including links to educational websites and resources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.show_schedule">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">show_schedule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.show_schedule" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves and displays the schedule for the current week from the ‘schedule’ table in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.show_students">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">show_students</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.show_students" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves and displays a list of students from the ‘students’ table in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutor_bot.start">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tutor_bot.</span></span><span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tutor_bot.start" title="Link to this definition">¶</a></dt>
+<dd><p>Handles the /start command. Sends a welcome message with options for the user to choose from.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>update</strong> (<em>Update</em>) – The update object that contains information about the incoming update.</p></li>
+<li><p><strong>context</strong> (<em>CallbackContext</em>) – The context object that contains information about the current context of the update.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-database">
+<span id="database"></span><h2>database<a class="headerlink" href="#module-database" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_tables">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.create_tables" title="Link to this definition">¶</a></dt>
+<dd><p>Creates the tables ‘students’ and ‘schedule’ in the ‘tutor_bot.db’ database.
+If the tables already exist, they will not be created again.</p>
+<dl class="simple">
+<dt>The ‘students’ table has the following columns:</dt><dd><ul class="simple">
+<li><p>id: INTEGER, Primary Key, Auto Increment</p></li>
+<li><p>name: TEXT, Not Null</p></li>
+<li><p>grade: TEXT, Not Null</p></li>
+</ul>
+</dd>
+<dt>The ‘schedule’ table has the following columns:</dt><dd><ul class="simple">
+<li><p>id: INTEGER, Primary Key, Auto Increment</p></li>
+<li><p>student_id: INTEGER, Not Null, Foreign Key referencing ‘students.id’</p></li>
+<li><p>weekday: INTEGER, Not Null</p></li>
+<li><p>time: TEXT, Not Null</p></li>
+<li><p>subject: TEXT, Not Null</p></li>
+</ul>
+</dd>
+</dl>
+<p>This function commits the changes to the database and then closes the connection.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">tutor_bot</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-tutor_bot">tutor_bot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-database">database</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to tutor_bot’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Daniel, Max, Misha, Kiril.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
