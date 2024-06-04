@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  tutor_bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/study_bot
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["python3", "tutor_bot.py"]
+
+  database:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: study_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
